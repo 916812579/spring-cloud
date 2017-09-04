@@ -1,6 +1,5 @@
 package org.service.conf;
 
-
 import javax.annotation.PreDestroy;
 
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -17,20 +16,21 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 @Configuration
 @EnableConfigurationProperties(DataSourceProperties.class)
-//mybaits dao 搜索路径
-@MapperScan("cloud.simple.service.dao")
+// mybaits dao 搜索路径
+@MapperScan("org.service.dao")
 public class MybatisDataSource {
 	@Autowired
 	private DataSourceProperties dataSourceProperties;
-	//mybaits mapper xml搜索路径
-	private final static String mapperLocations="classpath:cloud/simple/service/dao/*.xml"; 
+	// mybaits mapper xml搜索路径
+	private final static String mapperLocations = "classpath:org/service/dao/*.xml";
+	private final static String typeAliasesPackage = "org.service.model";
 
 	private org.apache.tomcat.jdbc.pool.DataSource pool;
-	
+
 	@Bean(destroyMethod = "close")
-	public DataSource dataSource() {		
-		DataSourceProperties config = dataSourceProperties;		
-		this.pool = new org.apache.tomcat.jdbc.pool.DataSource();		
+	public DataSource dataSource() {
+		DataSourceProperties config = dataSourceProperties;
+		this.pool = new org.apache.tomcat.jdbc.pool.DataSource();
 		this.pool.setDriverClassName(config.getDriverClassName());
 		this.pool.setUrl(config.getUrl());
 		if (config.getUsername() != null) {
@@ -55,16 +55,17 @@ public class MybatisDataSource {
 			this.pool.close();
 		}
 	}
-	
+
 	@Bean
-	public SqlSessionFactory sqlSessionFactoryBean() throws Exception {		
+	public SqlSessionFactory sqlSessionFactoryBean() throws Exception {
 		SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
-		sqlSessionFactoryBean.setDataSource(dataSource());		
+		sqlSessionFactoryBean.setDataSource(dataSource());
 		PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
 		sqlSessionFactoryBean.setMapperLocations(resolver.getResources(mapperLocations));
-		 return sqlSessionFactoryBean.getObject();
+		sqlSessionFactoryBean.setTypeAliasesPackage(typeAliasesPackage);
+		return sqlSessionFactoryBean.getObject();
 	}
-	
+
 	@Bean
 	public PlatformTransactionManager transactionManager() {
 		return new DataSourceTransactionManager(dataSource());
