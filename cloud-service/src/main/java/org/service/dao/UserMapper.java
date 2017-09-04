@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.service.model.User;
 
-public interface UserDao {
+public interface UserMapper {
 	
 	List<User> findAll();
 	
