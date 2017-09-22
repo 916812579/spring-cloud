@@ -95,8 +95,7 @@ eureka:
 
 pom.xml需要有如下配置
 ```xml
-<build>  
-    <finalName>cyc</finalName>  
+<build>   
     <plugins>  
         <plugin>  
             <groupId>org.springframework.boot</groupId>  
