@@ -1,7 +1,0 @@
-org\service\ServiceApplication.class
-org\service\model\User.class
-org\service\conf\DataSourceProperties.class
-org\service\conf\MybatisDataSource.class
-org\service\web\UserController.class
-org\service\dao\UserMapper.class
-org\service\domain\UserService.class
