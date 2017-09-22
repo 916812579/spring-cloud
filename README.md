@@ -4,7 +4,7 @@
 
 通过[http://start.spring.io/](http://start.spring.io/)创建项目
 
-![创建项目](https://github.com/916812579/spring-cloud/project_new.png)
+![创建项目](https://github.com/916812579/spring-cloud/raw/master/project_new.png)
 
 
 具体内容可以进入相关目录查看
