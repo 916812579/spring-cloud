@@ -1,4 +1,4 @@
-# 服务注册与发现（-）
+# 服务注册与发现（服务注册中心）
 
 - 参考：[http://blog.didispace.com/springcloud1/](http://blog.didispace.com/springcloud1/)
 
@@ -115,7 +115,7 @@ eureka:
 
 访问`http://localhost:1111/`，显示如下
 
-![](https://github.com/916812579/spring-cloud/raw/master/eureka.png)
+![](https://github.com/916812579/spring-cloud/raw/master/demo1/eureka.png)
 
 
 
