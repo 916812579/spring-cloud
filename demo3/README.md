@@ -123,3 +123,4 @@ java -jar C:\Users\hhly-pc\Desktop\jars\demo2-0.0.1-SNAPSHOT.jar --server.port=2
 访问http://localhost:3333/add两次
 ![](https://github.com/916812579/spring-cloud/raw/master/demo3/Ribbon.png)
 
+总结：`Ribbon`实现负载均衡需要在创建`RestTemplate`使用`@LoadBalanced`注解，访问服务时直接使用服务名进程访问。
