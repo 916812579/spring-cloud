@@ -1,4 +1,4 @@
-# 服务注册与发现
+# 服务注册与发现（-）
 
 - 参考：[http://blog.didispace.com/springcloud1/](http://blog.didispace.com/springcloud1/)
 
