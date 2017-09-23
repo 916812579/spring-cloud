@@ -5,12 +5,11 @@ spring:
         name: config-server
 
 # git管理配置
-spring:
     cloud:
         config:
             server:
                 git:
-                    uri: http://git.oschina.net/didispace/SpringBoot-Learning/
-                    searchPaths: Chapter9-1-4/config-repo
-                    username: username
-                    password: password
+                    uri: https://github.com/916812579/spring-cloud
+                    searchPaths: config/service-config
+                    username: 916812579
+                    password: h916812579

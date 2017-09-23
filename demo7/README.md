@@ -1,4 +1,4 @@
-# Spring Cloud构建微服务架构（四）分布式配置中心
+# Spring Cloud构建微服务架构 - 分布式配置中心
 
 - 参考：[http://blog.didispace.com/springcloud4/](http://blog.didispace.com/springcloud4/)
 
@@ -97,3 +97,71 @@ public class Application {
 ```
 
 - `application.yml`中配置服务信息以及`git`信息，例如：
+```yml
+server:
+    port: 7001
+spring:
+    application:
+        name: config-server
+
+# git管理配置
+spring:
+    cloud:
+        config:
+            server:
+                git:
+                    uri: https://github.com/916812579/spring-cloud
+                    searchPaths: config/service-config
+                    username: 916812579
+                    password: ******
+```
+
+- `spring.cloud.config.server.git.uri`：配置git仓库位置
+- `spring.cloud.config.server.git.searchPaths`：配置仓库路径下的相对搜索位置，可以配置多个
+- `spring.cloud.config.server.git.username`：访问git仓库的用户名
+- `spring.cloud.config.server.git.password`：访问git仓库的用户密码
+
+
+`Spring Cloud Config`也提供`本地存储配置`的方式。我们只需要设置属性`spring.profiles.active=native`，`Config Server`会默认从应用的`src/main/resource`目录下检索配置文件。也可以通过`spring.cloud.config.server.native.searchLocations=file:F:/properties/`属性来指定配置文件的位置。虽然`Spring Cloud Config`提供了这样的功能，但是为了支持更好的管理内容和版本控制的功能，还是推荐使用`git`的方式。
+
+
+## 配置服务的测试
+
+git仓库配置文件下创建四个文件如下：
+- test.yml
+- test-dev.yml
+- test-prod.yml
+- test-test.yml
+
+内容分别如下：
+- from: default
+- from: dev
+- from: prod
+- from: test
+
+
+URL与配置文件的映射关系如下：
+
+- /{application}/{profile}[/{label}]
+- /{application}-{profile}.yml
+- /{label}/{application}-{profile}.yml
+- /{application}-{profile}.properties
+- /{label}/{application}-{profile}.properties
+
+上面的`url`会映射`{application}-{profile}.properties`对应的配置文件，`{label}`对应`git`上不同的`分支`，默认为`master`。
+
+- 可以通过url访问配置文件
+
+```
+http://localhost:7001/filename/active/branch
+```
+
+- filename 文件名(-前面的部分)
+- active 文件名(-后面的部分)
+- branch git分支
+
+例如：
+```bash
+http://localhost:7001/test/dev
+http://localhost:7001/test/dev/master
+```
