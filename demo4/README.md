@@ -91,4 +91,10 @@ public class ConsumerController {
 - 启动应用
 
 访问：http://localhost:3333/add两次，可以观察服务端控制台的变化
+
+
+总结：
+- `@EnableFeignClients`注解开启`Feign`功能
+- `@FeignClient`指定消费的服务以及接口
+- `@Autowired`注入，然后就可以直接使用了
  
