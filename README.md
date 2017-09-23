@@ -18,3 +18,32 @@
 
 ## 目录
 
+
+
+
+## 注册中心高可用解决方案
+
+- 参考： [http://blog.didispace.com/springcloud6/](http://blog.didispace.com/springcloud6/)
+
+`Eureka Server`除了单点运行之外，还可以通过运行多个实例，并`进行互相注册`的方式来实现高可用的部署，所以我们只需要将Eureke Server配置其他可用的serviceUrl就能实现高可用部署。
+
+
+## Spring Cloud版本
+
+- 参考： [http://blog.didispace.com/springcloud-version/](http://blog.didispace.com/springcloud-version/)
+
+### 版本命名
+之前提到过，Spring Cloud是一个拥有诸多子项目的大型综合项目，原则上其子项目也都维护着自己的发布版本号。那么每一个Spring Cloud的版本都会包含不同的子项目版本，为了要管理每个版本的子项目清单，避免版本名与子项目的发布号混淆，所以没有采用版本号的方式，而是通过命名的方式。
+
+这些版本名字采用了伦敦地铁站的名字，根据字母表的顺序来对应版本时间顺序，比如：最早的Release版本：Angel，第二个Release版本：Brixton，以此类推……
+
+### 版本号
+
+经过上面的解释，不难猜出，之前所提到的Angel.SR6，Brixton.SR5中的SR6、SR5就是版本号了。
+
+当一个版本的Spring Cloud项目的发布内容积累到临界点或者一个严重bug解决可用后，就会发布一个“service releases”版本，简称SRX版本，其中X是一个递增数字。
+
+
+
+
+
