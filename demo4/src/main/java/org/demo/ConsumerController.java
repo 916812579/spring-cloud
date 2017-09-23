@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class ConsumerController {
-	
+
 	@Autowired
-	private ComputeService computeService;
+	ComputeClient computeClient;
 
 	@RequestMapping(value = "/add", method = RequestMethod.GET)
-	public String add() {
-		return computeService.addService();
+	public Integer add() {
+		return computeClient.add(10, 20);
 	}
 }
