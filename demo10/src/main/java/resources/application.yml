@@ -1,0 +1,20 @@
+server:
+    port: 7001
+spring:
+    application:
+        name: config-server
+
+# git管理配置
+    cloud:
+        config:
+            server:
+                git:
+                    uri: https://github.com/916812579/spring-cloud
+                    searchPaths: config/service-config
+                    username: 916812579
+                    password: h916812579
+                    
+eureka:
+    client:
+        serviceUrl:
+            defaultZone: http://localhost:1111/eureka/                    
