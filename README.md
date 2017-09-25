@@ -18,7 +18,7 @@
 
 ## 目录
 
-[服务注册与发现（服务注册中心](https://github.com/916812579/spring-cloud/tree/master/demo1)
+[服务注册与发现（服务注册中心)](https://github.com/916812579/spring-cloud/tree/master/demo1)
 
 [服务注册与发现（创建“服务提供方”）](https://github.com/916812579/spring-cloud/tree/master/demo2)
 
