@@ -72,7 +72,7 @@ public class Application {
 
 }
 ```
-- 沿用之前我们创建的Controller来加载Git中的配置信息
+- 沿用之前我们创建的Controller来加载Git中的配置信息,注意添加`RefreshScope`
 
 ```java
 package org.demo;
