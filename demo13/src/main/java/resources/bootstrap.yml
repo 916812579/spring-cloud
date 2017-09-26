@@ -1,0 +1,27 @@
+server:
+    port: 7005
+spring:
+    application:
+        name: test
+
+# git管理配置
+    cloud:
+        config:
+            profile: dev
+            discovery: 
+                enabled: true
+                serviceId: config-server
+        #kafka 相关配置            
+        stream:
+           kafka:
+               binder:
+                   zk-nodes: 192.168.116.10:2181
+                   brokers: 192.168.116.10:9092            
+eureka:
+    client:
+        serviceUrl:
+            defaultZone: http://localhost:1111/eureka/  
+            
+management:
+    security:
+        enabled: false
