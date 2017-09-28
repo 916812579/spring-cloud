@@ -36,6 +36,14 @@
 
 [Spring Cloud构建微服务架构 - 服务网关](https://github.com/916812579/spring-cloud/tree/master/demo9)
 
+[Spring Cloud构建微服务架构-分布式配置中心（高可用）](https://github.com/916812579/spring-cloud/tree/master/demo10)
+
+[Spring Cloud构建微服务架构 - 分布式配置中心(高可用的使用)](https://github.com/916812579/spring-cloud/tree/master/demo11)
+
+[Spring Cloud构建微服务架构-消息总线(RabbitMQ)](https://github.com/916812579/spring-cloud/tree/master/demo12)
+
+[Spring Cloud构建微服务架构-消息总线(kafka)](https://github.com/916812579/spring-cloud/tree/master/demo13)
+
 
 ## 注册中心高可用解决方案
 
