@@ -85,3 +85,8 @@ hystrix-dashboard : 参看代码 [https://github.com/916812579/spring-cloud/tree
 
 
 - 注意访问前需要访问一下eureka-consumer-ribbon-hystrix，不然一直处于采集数据中
+
+
+###  通过消息代理收集聚合
+
+参看：[https://github.com/916812579/spring-cloud/tree/master/demo16](https://github.com/916812579/spring-cloud/tree/master/demo16)
