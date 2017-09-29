@@ -77,7 +77,7 @@ hystrix-dashboard : 参看代码 [https://github.com/916812579/spring-cloud/tree
 
 - 访问 http://localhost:1301/hystrix，输入http://localhost:8769/turbine.stream进行查看
 
-![](https://github.com/916812579/spring-cloud/raw/master/demo15/hystrix.stream_db.png)
+![](https://github.com/916812579/spring-cloud/raw/master/demo15/hystrix.stream.png)
 
 显示效果如下
 
